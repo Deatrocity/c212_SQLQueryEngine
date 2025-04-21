@@ -13,7 +13,6 @@ public class Main {
         while (true) {
             String query = scanner.nextLine();
             runQuery(query, db);
-            System.out.print("$ ");
         }
     }
 
@@ -60,10 +59,13 @@ public class Main {
             // Catch and report invalid query errors
         } catch (InvalidQueryException e) {
             System.err.println("Invalid Query: " + e.getMessage());
+            System.out.println("$ ");
 
             // Catch and report any other unexpected errors
         } catch (Exception e) {
             System.err.println("Unexpected error: " + e.getMessage());
+            System.out.println("$ ");
         }
+        System.out.print("$ ");
     }
 }
